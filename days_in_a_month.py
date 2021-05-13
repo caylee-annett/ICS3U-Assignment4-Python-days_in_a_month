@@ -11,13 +11,18 @@ def main():
     # Input
     print("This program tells you how many days are in the month "
           "that you enter.")
-    month = input("Enter the name of a month: ")
+    month = input("Enter the name of a month (capitalize first letter): ")
     print("")
 
     # Process & Output
-    if month == "january" or month == "January":
-        print("There are 31 days in January.")
-    elif month == "february" or month == "February":
+    if month == "January" or month == "March" or month == "May" \
+            or month == "July" or month == "August" or month == "October" \
+            or month == "December":
+        print("There are 31 days in {}.".format(month))
+    elif month == "April" or month == "June" or month == "September" \
+            or month == "November":
+        print("There are 30 days in {}.".format(month))
+    elif month == "February":
         year_string = input("Enter the year to see if it is a leap year: ")
         try:
             year_integer = int(year_string)
@@ -30,26 +35,6 @@ def main():
                 print("There are 28 days in February.")
         except Exception:
             print("{} is not a valid input.".format(year_string))
-    elif month == "march" or month == "March":
-        print("There are 31 days in March.")
-    elif month == "april" or month == "April":
-        print("There are 30 days in April.")
-    elif month == "may" or month == "May":
-        print("There are 31 days in May.")
-    elif month == "june" or month == "June":
-        print("There are 30 days in June.")
-    elif month == "july" or month == "July":
-        print("There are 31 days in July.")
-    elif month == "august" or month == "August":
-        print("There are 31 days in August.")
-    elif month == "september" or month == "September":
-        print("There are 30 days in September.")
-    elif month == "october" or month == "October":
-        print("There are 31 days in October.")
-    elif month == "november" or month == "November":
-        print("There are 30 days in November.")
-    elif month == "december" or month == "December":
-        print("There are 31 days in December.")
     else:
         print("{} is not a valid input.".format(month))
     print("\nDone.")
